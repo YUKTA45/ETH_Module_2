@@ -1,12 +1,12 @@
-# Decentralized Book Store
+# Book Store
 
-In this project, We will create a Decentralized Book Store which has several functions like buyBook, returnBook, getBookDetails and getOwnerDetails.
+This project implements a decentralized book store smart contract on the Ethereum blockchain using Solidity and Hardhat.
 
 ## Features 
-#### Buy Book: Purchase books from the store.
-#### Return Book: Return books previously purchased.
-#### Get Book Details: Retrieve details about the available stock.
-#### Get Owner Details: Retrieve the owner's address of the book store.
+#### Buy Book\: Purchase books from the store.
+#### Return Book\: Return books previously purchased.
+#### Get Book Details\: Retrieve details about the available stock.
+#### Get Owner Details\: Retrieve the owner's address of the book store.
 
 ## Prerequisites
 #### Node.js and npm installed
