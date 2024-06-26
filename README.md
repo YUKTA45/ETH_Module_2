@@ -87,6 +87,7 @@ After creating this file we will have to deploy it using hardhat so we follow th
 After this, the project will be running on your localhost. 
 Typically at http://localhost:3000/
 
+We will note down the deployed contract address and after that we will create a frontend for the project and then create a connection with the metamask wallet ans then direct the user to the wallet page whenever any transaction is to be made.
 
 ## Authors
 Yukta
