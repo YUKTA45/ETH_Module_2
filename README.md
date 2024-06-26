@@ -1,14 +1,15 @@
-# Book Store
+# ETH_Module_2
+## Book Store
 
 This project implements a decentralized book store smart contract on the Ethereum blockchain using Solidity and Hardhat.
 
-## Features 
+### Features 
 #### Buy Book: Purchase books from the store.
 #### Return Book: Return books previously purchased.
 #### Get Book Details: Retrieve details about the available stock.
 #### Get Owner Details: Retrieve the owner's address of the book store.
 
-## Prerequisites
+### Prerequisites
 #### Node.js and npm installed
 #### Metamask extension installed in your browser
 #### Basic knowledge of Ethereum, Solidity, and JavaScript
