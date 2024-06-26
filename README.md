@@ -9,9 +9,9 @@ In this project, We will create a Decentralized Book Store which has several fun
 #### Get Owner Details: Retrieve the owner's address of the book store.
 
 ## Prerequisites
-Node.js and npm installed
-Metamask extension installed in your browser
-Basic knowledge of Ethereum, Solidity, and JavaScript
+#### Node.js and npm installed
+#### Metamask extension installed in your browser
+#### Basic knowledge of Ethereum, Solidity, and JavaScript
 
 ### Executing the program
 To run this program, you can use Remix, an online Solidity IDE. Follow these steps:
