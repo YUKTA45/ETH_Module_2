@@ -1,10 +1,26 @@
-# ETH_Module_2
+# Decentralized Book Store
 
-We will create a Decentralized Book Store which has several functions like buyBook, returnBook, getBookDetails and getOwnerDetails.
+This project implements a decentralized book store smart contract on the Ethereum blockchain using Solidity and Hardhat.
 
+## Features
+Buy Book: Purchase books from the store.
+Return Book: Return books previously purchased.
+Get Book Details: Retrieve details about the available stock.
+Get Owner Details: Retrieve the owner's address of the book store.
 
-Now we will first of all create a smart contract and then deploy it in VS Code using hardhat.
+## Prerequisites
+Node.js and npm installed
+Metamask extension installed in your browser
+Basic knowledge of Ethereum, Solidity, and JavaScript
 
+### Executing the program
+To run this program, you can use Remix, an online Solidity IDE. Follow these steps:
+
+Navigate to Remix: Open your web browser and go to Remix Ethereum.
+
+Create a New File: In the Remix IDE, create a new file by clicking the "+" icon in the left-hand sidebar. Save the file with a .sol extension, for example, ShoppingPlatform.sol.
+
+Copy and Paste the Code: Copy the provided smart contract code and paste it into the new file. solidity Copy code
 
 ```js
 // SPDX-License-Identifier: MIT
@@ -72,4 +88,8 @@ After this, the project will be running on your localhost.
 Typically at http://localhost:3000/
 
 
-We will note down the deployed contract address and after that we will create a frontend for the project and then create a connection with the metamask wallet and then direct the user to the wallet page whenever any transaction is to be made.
+## Authors
+Yukta
+[@Chandigarh University](https://www.linkedin.com/in/yukta-/)
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
