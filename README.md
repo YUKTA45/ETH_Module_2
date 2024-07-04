@@ -1,29 +1,23 @@
-# ETH_Module_2
-## Book Store
 
-This project implements a decentralized book store smart contract on the Ethereum blockchain using Solidity and Hardhat.
+### ETH_Module_2
+## Decentralized Book Store
+The Decentralized Book Store project implements a smart contract on the Ethereum blockchain using Solidity and Hardhat. It allows users to buy and return books while managing the available stock securely. The contract owner can also retrieve the book and owner details.
 
-### Features 
-#### Buy Book: Purchase books from the store.
-#### Return Book: Return books previously purchased.
-#### Get Book Details: Retrieve details about the available stock.
-#### Get Owner Details: Retrieve the owner's address of the book store.
+## Description
+The Decentralized Book Store smart contract is designed to create a decentralized platform where users can purchase and return books. The contract includes functionalities for retrieving book and owner details, managed securely by the contract owner.
+## Getting Started
+### Installing
 
-### Prerequisites
-#### Node.js and npm installed
-#### Metamask extension installed in your browser
-#### Basic knowledge of Ethereum, Solidity, and JavaScript
+1. Clone the project repository from GitHub.
+2. Navigate to the project directory.
+3. Run the following command to install necessary dependencies:
+``
+   npm i
+``
 
-### Executing the program
-To run this program, you can use Remix, an online Solidity IDE. Follow these steps:
+## Sample Smart Contract Code
 
-Navigate to Remix: Open your web browser and go to Remix Ethereum.
-
-Create a New File: In the Remix IDE, create a new file by clicking the "+" icon in the left-hand sidebar. Save the file with a .sol extension, for example, ShoppingPlatform.sol.
-
-Copy and Paste the Code: Copy the provided smart contract code and paste it into the new file. solidity Copy code
-
-```js
+``` javascript
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -34,23 +28,24 @@ contract BookStore {
 
     mapping(address => uint) public userPurchases; 
 
-    
+    event BookPurchased(address indexed user, uint quantity);
+    event BookReturned(address indexed user, uint quantity, string message);
+
     constructor(string memory _bookName, uint _stock) {
         bookName = _bookName;
         stock = _stock;
         owner = msg.sender;
     }
 
-   
     function buyBook(uint _quantity) public {
         require(_quantity > 0, "Quantity must be greater than zero");
         require(_quantity <= stock, "Not enough stock available");
 
         stock -= _quantity;
         userPurchases[msg.sender] += _quantity;
+        emit BookPurchased(msg.sender, _quantity);
     }
 
-  
     function returnBook(uint _quantity) public {
         require(_quantity > 0, "Quantity must be greater than zero");
         require(userPurchases[msg.sender] >= _quantity, "You have not bought enough books to return");
@@ -58,40 +53,63 @@ contract BookStore {
         stock += _quantity;
         userPurchases[msg.sender] -= _quantity;
 
-        
-        emit ReturnSuccessful("Return successful, refund initiated");
+        emit BookReturned(msg.sender, _quantity, "Return successful, refund initiated");
     }
 
-    
     function getBookDetails() public view returns (string memory, uint) {
         return (bookName, stock);
     }
 
-  
     function getOwnerDetails() public view returns (address) {
         return owner;
     }
-
-    
-    event ReturnSuccessful(string message);
 }
 
 ```
-After creating this file we will have to deploy it using hardhat so we follow the following instructions:
 
-1. Inside the project directory, in the terminal type: npm i
-2. Open two additional terminals in your VS code
-3. In the second terminal type: npx hardhat node
-4. In the third terminal, type: npx hardhat run --network localhost scripts/deploy.js
-5. Back in the first terminal, type npm run dev to launch the front-end.
 
-After this, the project will be running on your localhost. 
-Typically at http://localhost:3000/
+## Executing program
 
-We will note down the deployed contract address and after that we will create a frontend for the project and then create a connection with the metamask wallet ans then direct the user to the wallet page whenever any transaction is to be made.
+1. Open three terminals in your VS Code and navigate to the project directory in each terminal.
+2. In the first terminal, start the local blockchain node:
 
+
+   ``
+    npx hardhat node
+   ``
+4. In the second terminal, deploy the contract to the local blockchain network:
+
+
+   ``
+    npx hardhat run --network localhost scripts/deploy.js
+   ``
+6. Again in the first terminal, launch the front-end of the project:
+
+
+   ``
+    npm run dev
+   ``
+
+   
+The project should now be running on your localhost, typically at http://localhost:3000/.
+
+
+## Working
+
+After deploying the contract, document the deployed contract address and place it in the required parts of the project files. Develop the project’s frontend to establish a connection with the MetaMask wallet, directing the user to the wallet page for transaction approvals. Users will be able to buy and return books, which will redirect them to MetaMask to authorize transactions.
+
+## Help
+If you encounter any issues or need further assistance, refer to the help command within the project.
+
+
+``
+    npx hardhat help
+``
 ## Authors
-Yukta
-[@Chandigarh University](https://www.linkedin.com/in/yukta-/)
+
+Contributors names and contact info:
+
+Yukta[https://www.linkedin.com/in/yukta-/]
+
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the LICENSE.md file for details.
