@@ -1,5 +1,5 @@
 
-### ETH_Module_2
+## ETH_Module_2
 ## Decentralized Book Store
 The Decentralized Book Store project implements a smart contract on the Ethereum blockchain using Solidity and Hardhat. It allows users to buy and return books while managing the available stock securely. The contract owner can also retrieve the book and owner details.
 
